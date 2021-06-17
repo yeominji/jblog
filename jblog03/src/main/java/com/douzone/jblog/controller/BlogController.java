@@ -11,12 +11,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping("/{id:(?!assets).*}")
 public class BlogController {
 	
-	@ResponseBody
 	@RequestMapping({ "", "/{pathNo1}", "/{pathNo1}/{pathNo2}" })
 	public String index(
 		@PathVariable("id") String id,
 		@PathVariable("pathNo1") Optional<Long> pathNo1,
 		@PathVariable("pathNo2") Optional<Long> pathNo2) {
+		System.out.println(".......");
 		Long categoryNo = 0L;
 		Long postNo = 0L;
 		
@@ -32,14 +32,14 @@ public class BlogController {
 		System.out.println("category:" + categoryNo);
 		System.out.println("post:" + postNo);
 		
-		return "BlogController.index";
+		return "blog/index";
 	}
 	
-	@ResponseBody
+
 	@RequestMapping("/admin/basic")
 	public String adminBasic(@PathVariable("id") String id) {
 		System.out.println(id);
-		return "BlogController.adminBasic";
+		return "blog/admin/basic";
 		
 	}
 }
