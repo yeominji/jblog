@@ -11,10 +11,10 @@
 	
  	<select id="findIdAndPassword" parameterType="map" resultType="uservo">
 		<![CDATA[
-		select name, id
+		select name, id,password
 		  from user
-  		 where id=#{i }
-  		   and password=#{p }
+  		 where id=#{id }
+  		   and password=#{password }
 		]]>
 	</select>
 	

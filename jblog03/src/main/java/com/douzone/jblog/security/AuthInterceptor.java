@@ -56,17 +56,17 @@ public class AuthInterceptor extends HandlerInterceptorAdapter {
 
 		
 		// 7. 권한(Authorization) 체크를 위해서 @Auth의 role 가져오기("ADMIN", "USER")
-		String role = auth.role();
-		String authRole = authUser.getRole();
-		
-		if (role.equals("USER")) {
-			return true;
-		}
-
-		if (!authRole.equals("ADMIN")) {
-			response.sendRedirect(request.getContextPath());
-			return true;
-		}
+//		String role = auth.role();
+//		String authRole = authUser.getRole();
+//		
+//		if (role.equals("USER")) {
+//			return true;
+//		}
+//
+//		if (!authRole.equals("ADMIN")) {
+//			response.sendRedirect(request.getContextPath());
+//			return true;
+//		}
 
 		return true;
 	}

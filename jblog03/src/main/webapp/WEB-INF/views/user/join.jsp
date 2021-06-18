@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="center-content">
-		<c:import url="/WEB-INF/views/includes/center-content.jsp" />
+		<c:import url="/WEB-INF/views/includes/header.jsp" />
 		
 		<form class="join-form" id="join-form" method="post" action="">
 			<label class="block-label" for="name">이름</label>

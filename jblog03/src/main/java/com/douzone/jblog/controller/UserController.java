@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.douzone.jblog.service.BlogService;
 import com.douzone.jblog.service.UserService;
 import com.douzone.jblog.vo.UserVo;
 
@@ -19,6 +20,8 @@ public class UserController {
 	
 	 @Autowired
 		private UserService userService;
+	   @Autowired 
+	 private BlogService blogService;
 	 
 	 @RequestMapping(value="/join",method=RequestMethod.GET)
 	 public String join(@ModelAttribute UserVo vo) {
@@ -33,7 +36,8 @@ public class UserController {
     	  return "user/join";
       }
       userService.join(vo);
-    	
+     
+   	
       return "redirect:/user/joinsuccess";
       }
 	@RequestMapping(value="/joinsuccess")
@@ -46,8 +50,12 @@ public class UserController {
 		return "user/login";
 	}
 
+	@RequestMapping(value ="logout")
+	public String logout() {
+       return "redirect:/ ";		
+	}
 	
-	
+	 
 }
     
     

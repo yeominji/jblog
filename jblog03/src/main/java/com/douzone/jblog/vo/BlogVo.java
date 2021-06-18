@@ -1,7 +1,11 @@
 package com.douzone.jblog.vo;
 
 public class BlogVo {
- private  String id;
+ @Override
+	public String toString() {
+		return "BlogVo [id=" + id + ", title=" + title + ", logo=" + logo + "]";
+	}
+private  String id;
  private String title;
  private String logo;
 public String getId() {

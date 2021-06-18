@@ -26,13 +26,6 @@
 	<!-- 서블릿 컨테이너의 디폴트 서블릿 위임 핸들러 -->
 	<mvc:default-servlet-handler />
 
-	<!--mvc resources mapping -->
-	<!-- mapping 시에 img들의 위치는 location과 mapping이 각각 지정하는곳에 있어야한다. -->
-	<mvc:resources
-		location="file:/Users/yeominji/uploads-mysite/"
-		mapping="/images/**" />
-
-
 	<!-- Interceptors -->
 	<mvc:interceptors>
 		<mvc:interceptor>
@@ -107,6 +100,13 @@
 		<!-- defaultEncoding -->
 		<property name="defaultEncoding" value="utf-8" />
 	</bean>
+	
+	<!--mvc resources mapping -->
+	<!-- mapping 시에 img들의 위치는 location과 mapping이 각각 지정하는곳에 있어야한다. -->
+	<mvc:resources
+		location="file:/Users/yeominji/upload-jblog/"
+		mapping="/assets/uploads/**" />
+	
 
 
 	<!-- 6. MessageSource -->
