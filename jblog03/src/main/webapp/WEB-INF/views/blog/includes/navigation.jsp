@@ -2,11 +2,15 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
-<div id="wrapper">
-			<div id="content" class="full-screen">
-				<ul class="admin-menu">
-					<li><a href="">기본설정</a></li>
-					<li class="selected">카테고리</li>
-					<li><a href="">글작성</a></li>
-					</ul>
-					</div>
+<%
+	pageContext.setAttribute("newline", "\n");
+%>
+
+		<div id="navigation">
+			<h2>카테고리</h2>
+			<ul>
+				<c:forEach items="${categoryList }" var="vo" varStatus="status">
+				<li><a href="${pageContext.request.contextPath}/${requestScope.id }/${vo.no }">${vo.name }</a></li>
+				</c:forEach> 
+			</ul>
+		</div>

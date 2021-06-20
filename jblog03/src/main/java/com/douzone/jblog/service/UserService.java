@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.douzone.jblog.repository.BlogRepository;
 import com.douzone.jblog.repository.UserRepository;
-import com.douzone.jblog.vo.BlogVo;
 import com.douzone.jblog.vo.UserVo;
 @Service
 public class UserService {

@@ -22,6 +22,7 @@ public class UserController {
 		private UserService userService;
 	   @Autowired 
 	 private BlogService blogService;
+	   
 	 
 	 @RequestMapping(value="/join",method=RequestMethod.GET)
 	 public String join(@ModelAttribute UserVo vo) {

@@ -19,7 +19,6 @@
 					<li class="selected">카테고리</li>
 					<li><a href="">글작성</a></li>
 				</ul>
-			<form action="${pageContext.request.contextPath }/blog/admin/category" method="POST">
 				  <table class="admin-cat">
 		      		<tr>
 		      			<th>번호</th>
@@ -28,17 +27,26 @@
 		      			<th>설명</th>
 		      			<th>삭제</th>      			
 		      		</tr>
+					
+					<c:set var="count" value="${fn:length(list) }" />
+					<c:forEach items="${list }" var="vo" varStatus="status">
 					<tr>
-						<td>${vo.no }</td>
-						<td>${vo.title }</td>
-						<td>{vo.desc}</td>
-						<td>{vo.category}</td>
-						<td><img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></td>
-					</tr>  
+					
+						<td>[${count-status.index}]</td>
+						<td>${vo.name }</td>
+						<td>10</td>
+						<td>${vo.desc }</td>
+						<td>
+							<a href="${pageContext.request.contextPath }/${requestScope.id }/admin/category/delete/${vo.no }">
+					<img src="${pageContext.request.contextPath}/assets/images/delete.jpg"></a>
+					</td>
+					</tr>
+					</c:forEach>
 										  
 				</table>
       	
       			<h4 class="n-c">새로운 카테고리 추가</h4>
+      			<form action="${pageContext.request.contextPath }/${requestScope.id }/admin/category" method="post">
 		      	<table id="admin-cat-add">
 		      		<tr>
 		      			<td class="t">카테고리명</td>
@@ -54,7 +62,7 @@
 		      		</tr>      		      		
 		      	</table> 
 		      	</form>
-			</div>
+		      	</div>
 		</div>
 		<c:import url="/WEB-INF/views/blog/includes/footer.jsp" />
 	</div>

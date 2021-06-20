@@ -99,6 +99,13 @@
 		    <version>2.9.8</version>
 		</dependency>
 		
+		<!-- Spring Aspect -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-aspects</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
 		<!-- validation -->
 		<dependency>
 		   <groupId>javax.validation</groupId>
