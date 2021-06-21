@@ -12,6 +12,7 @@
 <body>
 	<div id="container">
 	<c:import url="/WEB-INF/views/blog/includes/header.jsp" />
+		
 		<div id="wrapper">
 			<div id="content">
 				<div class="blog-content">
@@ -24,7 +25,7 @@
 					<c:set var="count" value="${fn:length(list) }" />
 					<c:forEach items="${postList }" var="vo" varStatus="status" >
 					
-					<li><a href="${pageContext.request.contextPath }/${requestScope.id }/${vo.categoryNo }/${vo.no }">${vo.title }</a> <span>${vo.regDate }</span>	</li>
+					 <li><a href="${pageContext.request.contextPath }/${requestScope.id }/${vo.categoryNo }/${vo.no }">${vo.title }</a> <span>${vo.regDate }</span>	</li>
 				</c:forEach>
 				</ul>
 			</div>
