@@ -15,16 +15,16 @@
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
-				<li><a href="${pageContext.request.contextPath }/${requestScope.id }/admin/basic">기본설정</a></li>
-					<li><a href="${pageContext.request.contextPath}/${requestScope.id }/admin/category">카테고리</a></li>
+				<li><a href="${pageContext.request.contextPath }/${authUser.id }/admin/basic">기본설정</a></li>
+					<li><a href="${pageContext.request.contextPath}/${authUser.id }/admin/category">카테고리</a></li>
 					<li class="selected">글작성</li>
 				</ul>
-				<form action="${pageContext.request.contextPath}/${requestScope.id }/admin/write"  method="post">
+				<form action="${pageContext.request.contextPath}/${authUser.id }/admin/write"  method="post">
 			      	<table class="admin-cat-write">
 			      		<tr>
 			      			<td class="t">제목 </td>
 			      			<td>
-			      				<input type="text" size="60" name="title" value="${postVo.title}">
+			      				<input type="text" size="60" name="title" value="${vo.title}">
  			                     <select name="categoryNo">
 					<c:forEach items="${list }" var="vo" varStatus="status">
 				      				<option value="${vo.no }" >${vo.name }</option>
@@ -34,7 +34,7 @@
 			      		</tr>
 			      		<tr>
 			      			<td class="t">내용</td>
-			      			<td><textarea name="content" value="${postVo.contents}"></textarea></td>
+			      			<td><textarea name="content" value="${vo.contents}"></textarea></td>
 			      		</tr>
 			      		<tr>
 			      			<td>&nbsp;</td>

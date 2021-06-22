@@ -16,9 +16,9 @@
 		<div id="wrapper">
 			<div id="content" class="full-screen">
 				<ul class="admin-menu">
-					<li><a href="">기본설정</a></li>
+					<li><a href="${pageContext.request.contextPath }/${authUser.id}/admin/basic">기본설정</a></li>
 					<li class="selected">카테고리</li>
-					<li><a href="">글작성</a></li>
+					<li><a href="${pageContext.request.contextPath }/${authUser.id}/admin/write">글작성</a></li>
 				</ul>
 				  <table class="admin-cat">
 		      		<tr>
@@ -29,8 +29,8 @@
 		      			<th>삭제</th>      			
 		      		</tr>
 					
-					<c:set var="count" value="${fn:length(list) }" />
-					<c:forEach items="${list }" var="vo" varStatus="status">
+					<c:set var="count" value="${fn:length(clist) }" />
+					<c:forEach items="${clist }" var="vo" varStatus="status">
 					<tr>
 					
 						<td>[${count-status.index}]</td>
@@ -65,6 +65,7 @@
 		      	</form>
 		      	</div>
 		</div>
+		
 		<c:import url="/WEB-INF/views/blog/includes/footer.jsp" />
 	</div>
 </body>

@@ -5,28 +5,23 @@
 		<![CDATA[
 			insert 
 			  into post 
-			 values (null, #{title }, #{contents }, sysdate(), #{categoryNo } ) 
+			 values (null, #{title }, #{contents }, now(), #{categoryNo } ) 
 		]]>		
 	</insert>
 	
 	
 	<select id="findAll" resultType="postvo">
 	<![CDATA[
-		select * from post
+       select *from post 
 	]]>
 	</select>
 	
-	<select id="findByNo" resultType="postvo" parameterType="map">
-		<![CDATA[
-		select * from post where category_no=#{categoryNo}
-		   ]]>
-		 
-	</select>
+
 
 
 	<select id="findByNoAndNo" resultType="postvo" parameterType="map">
 		<![CDATA[
-		select * from post where no=#{no}
+		select a.title, a.contents ,a.reg_date as regDate, a.category_no as categoryNo from  post a , category b where a.category_no =b.no and b.blog_id=#{id}
 		   ]]>
 	</select>
 </mapper>

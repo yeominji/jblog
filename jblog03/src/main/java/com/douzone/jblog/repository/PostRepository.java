@@ -24,14 +24,7 @@ public class PostRepository {
 		return sqlSession.selectList("post.findAll");
 	}
 	
-	public PostVo findByNo(String id, Long categoryNo, Long postNo){
-		Map<String, String> map = new HashMap<>();
-		map.put("id", id);
-		map.put("categoryNo", String.valueOf(categoryNo));
-		map.put("postNo", String.valueOf(postNo));
 
-		return sqlSession.selectOne("post.findByNo", map);
-	}
 	
 	public List<PostVo> findByNoAndNo(String id, Long categoryNo){
 		Map<String, String> map = new HashMap<>();

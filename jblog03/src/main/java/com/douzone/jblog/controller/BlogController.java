@@ -54,7 +54,7 @@ public class BlogController {
 		model.addAttribute("blogVo",vo);
 		
 		List<CategoryVo> list = categoryService.find(id);
-		model.addAttribute("categoryList", list);
+		model.addAttribute("Clist", list);
 		
 		
 		if(pathNo2.isPresent()) {
@@ -64,13 +64,12 @@ public class BlogController {
 			categoryNo = pathNo1.get();
 			categoryNo = list.get(0).getNo();
 		}
-		PostVo post = postService.findByNo(id, categoryNo, postNo);
-		model.addAttribute("post", post);
+		
 		
 		List<PostVo> postList = postService.findByNoAndNo(id, categoryNo);
-		model.addAttribute("postList", postList);
+		model.addAttribute("pList", postList);
 		
-		
+		System.out.println(postList.toString());
 		System.out.println("id:" + id);
 		System.out.println("category:" + categoryNo);
 		System.out.println("post:" + postNo);
@@ -105,7 +104,7 @@ public class BlogController {
 	@RequestMapping(value="/admin/category", method=RequestMethod.GET)
 	public String adminCategory(@PathVariable("id") String id, CategoryVo categoryVo, Model model) {
 		List<CategoryVo> list = categoryService.find(id);
-		model.addAttribute("list", list);
+		model.addAttribute("clist", list);
 		BlogVo vo = blogService.find(id);
 		model.addAttribute("blogVo", vo);
 
@@ -124,7 +123,7 @@ public class BlogController {
 	@RequestMapping(value="/admin/write", method=RequestMethod.GET)
 	public String adminWrite(@PathVariable("id") String id, Long no, Model model) {
 		List<CategoryVo> list = categoryService.find(id);
-		model.addAttribute("list", list);
+		model.addAttribute("plist", list);
 		BlogVo vo = blogService.find(id);
 		model.addAttribute("blogVo",vo);
 
@@ -133,7 +132,7 @@ public class BlogController {
 	}
 	@Auth
 	@RequestMapping(value="/admin/write", method=RequestMethod.POST)
-	public String adminWrite(@PathVariable("id") String id, PostVo postVo, CategoryVo categoryVo) {
+	public String adminWrite(@PathVariable("id") String id, PostVo postVo) {
 		postService.insert(postVo);
 		
 		return "redirect:/{id}";

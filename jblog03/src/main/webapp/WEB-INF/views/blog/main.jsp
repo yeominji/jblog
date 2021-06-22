@@ -16,13 +16,13 @@
 		<div id="wrapper">
 			<div id="content">
 				<div class="blog-content">
-					<h4> ${post.title} </h4>
+				 	<h4> ${postList.title} </h4>
 					<p>
-						${post.content}
-					<p>
+						${postList.contents}
+					<p> 
 				</div>
 				<ul class="blog-list">
-					<c:set var="count" value="${fn:length(list) }" />
+					<c:set var="count" value="${fn:length(postList) }" />
 					<c:forEach items="${postList }" var="vo" varStatus="status" >
 					
 					 <li><a href="${pageContext.request.contextPath }/${requestScope.id }/${vo.categoryNo }/${vo.no }">${vo.title }</a> <span>${vo.regDate }</span>	</li>
@@ -33,7 +33,7 @@
 
 		<div id="extra">
 			<div class="blog-logo">
-				<img src="${pageContext.request.contextPath}/${BlogVo.logo}">
+				<img src="${pageContext.request.contextPath}/${blogVo.logo}">
 			</div>
 		</div>
 
