@@ -5,7 +5,7 @@
 		<![CDATA[
 			insert 
 			  into post 
-			 values (null, #{title }, #{contents }, now(), #{categoryNo } ) 
+			 values (null, #{title }, #{contents }, now(),#{categoryNo}) 
 		]]>		
 	</insert>
 	

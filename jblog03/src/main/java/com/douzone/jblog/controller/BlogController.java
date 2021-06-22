@@ -65,9 +65,13 @@ public class BlogController {
 			categoryNo = list.get(0).getNo();
 		}
 		
+
+	
 		
 		List<PostVo> postList = postService.findByNoAndNo(id, categoryNo);
-		model.addAttribute("pList", postList);
+		model.addAttribute("list", postList);
+	List<PostVo> List = postService.findAll();
+		model.addAttribute("list1",List);
 		
 		System.out.println(postList.toString());
 		System.out.println("id:" + id);

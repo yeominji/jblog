@@ -9,8 +9,8 @@
 		<div id="navigation">
 			<h2>카테고리</h2>
 			<ul>
-				<c:forEach items="${categoryList }" var="vo" varStatus="status">
-				<li><a href="${pageContext.request.contextPath}/${requestScope.id }/${vo.no }">${vo.name }</a></li>
+				<c:forEach items="${Clist }" var="vo" varStatus="status">
+				<li><a href="${pageContext.request.contextPath}/${authUser.id }/${vo.no }">${vo.name }</a></li>
 				</c:forEach> 
 			</ul>
 		</div>

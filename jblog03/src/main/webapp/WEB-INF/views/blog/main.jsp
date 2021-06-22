@@ -11,22 +11,21 @@
 </head>
 <body>
 	<div id="container">
-	<c:import url="/WEB-INF/views/blog/includes/header.jsp" />
-		
+			<c:import url="/WEB-INF/views/blog/includes/header.jsp" />
 		<div id="wrapper">
 			<div id="content">
 				<div class="blog-content">
-				 	<h4> ${postList.title} </h4>
+
+					<h4>${list[1].title }</h4>
 					<p>
-						${postList.contents}
-					<p> 
+						${list[1].contents }
+					<p>
+				
 				</div>
 				<ul class="blog-list">
-					<c:set var="count" value="${fn:length(postList) }" />
-					<c:forEach items="${postList }" var="vo" varStatus="status" >
-					
-					 <li><a href="${pageContext.request.contextPath }/${requestScope.id }/${vo.categoryNo }/${vo.no }">${vo.title }</a> <span>${vo.regDate }</span>	</li>
-				</c:forEach>
+				<c:forEach items="${list1 }" var="vo" varStatus="status">
+					<li><a href="${pageContext.request.contextPath}/${vo.categoryNo} ">${vo.title}</a> <span>${vo.regDate}</span>	</li>
+              </c:forEach>   
 				</ul>
 			</div>
 		</div>
@@ -37,7 +36,8 @@
 			</div>
 		</div>
 
-		<c:import url = "/WEB-INF/views/blog/includes/navigation.jsp" />	
+			<c:import url="/WEB-INF/views/blog/includes/navigation.jsp" />
+		
 			<c:import url="/WEB-INF/views/blog/includes/footer.jsp" />
 	</div>
 </body>
